@@ -2,6 +2,21 @@
   "name": "react-template",
   "private": true,
   "version": "0.0.0",
+  "scripts": {
+    "dev": "vite dev",
+    "start": "vite preview --host 0.0.0.0",
+    "prebuild": "npm run generate-pwa-assets",
+    "build": "vite build",
+    "build:cloudflare": "node scripts/cloudflare-build.js",
+    "serve": "vite preview",
+    "test": "vitest run",
+    "lint": "eslint",
+    "format": "prettier",
+    "check": "prettier --write . && eslint --fix",
+    "generate-icons": "node scripts/generate-icons.js",
+    "generate-manifest": "node scripts/generate-manifest.js",
+    "generate-pwa-assets": "node scripts/generate-manifest.js && echo 'PWA assets generated'"
+  },
   "dependencies": {
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
